@@ -19,9 +19,11 @@ if(isset($_POST['login'])) {
         {
             $_SESSION['id_user'] = userLogin($conn, $email, $password);
             header('Location: index.php');
+        } else {
+            echo 'Email ou Mot de passe incorrect. Veuillez réessayer s\'il vous plait.';
         }
     } else {
-        // Message d'erreur en HTML à mettre (Mauvais Login ou Mot de passe)
+        echo 'Email ou mot de passe incorrect. Veuillez réessayer s\'il vous plait.';
     }
 }
 
