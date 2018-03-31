@@ -13,7 +13,7 @@ function    userLogin($conn, $email, $password)
     if ($result = mysqli_query($conn, $query))
     {
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        return $row['id'];
+        return $row['id_user'];
     }
 }
 
@@ -30,13 +30,10 @@ function    checkIfEmailExist($conn, $email)
 
 function    getUserLevel($conn, $id_user)
 {
-    $query = "SELECT id_user FROM users WHERE id_user = '" . $id_user . "'";
+    $query = "SELECT id_user FROM users WHERE id_user = '" . $id_user . "' AND admin = 1";
     $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) > 0)
-    {
-        $row = mysqli_fetch_assoc($result);
-        return $row['admin'];
-    }
+    if(mysqli_num_rows($result) > 0)
+        return 1;
     mysqli_close($conn);
 }
 

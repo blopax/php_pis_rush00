@@ -2,6 +2,9 @@
 include('includes/header.php');
 include('../model/select.php');
 
+if(isset($_GET['error']))
+    echo 'Vous devez être connecté pour accéder à la page.<br>'; // Mettre une bannière 'ALERT'
+
 if(isset($_POST['login'])) {
     $error = 0;
 
@@ -15,10 +18,10 @@ if(isset($_POST['login'])) {
 
     if (!$error)
     {
-        if (userLogin($conn, $email, $password))
+        if (userLogin($conn, $email, hash('whirlpool', $password)))
         {
-            $_SESSION['id_user'] = userLogin($conn, $email, $password);
-            header('Location: index.php');
+            $_SESSION['id_user'] = userLogin($conn, $email, hash('whirlpool', $password));
+            header('Location: profile.php');
         } else {
             echo 'Email ou Mot de passe incorrect. Veuillez réessayer s\'il vous plait.';
         }
