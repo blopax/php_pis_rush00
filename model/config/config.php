@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE)
 
 $mysql_host = 'localhost';
 $mysql_username = 'root';
-$mysql_password = '';
+$mysql_password = 'PXOYTPNH';
 $mysql_database = 'rush00';
 
 $conn = mysqli_connect($mysql_host, $mysql_username, $mysql_password, $mysql_database);
