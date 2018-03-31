@@ -2,10 +2,13 @@
 
 $mysql_host = 'localhost';
 $mysql_username = 'root';
-$mysql_password = '210987';
+$mysql_password = 'PXOYTPNH';
 $mysql_database = 'db_rush';
 
 $fd = mysqli_connect($mysql_host, $mysql_username, $mysql_password);
+
+$query = "DROP DATABASE IF EXISTS db_rush;";
+mysqli_query($fd,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
 
 $query = "CREATE DATABASE IF NOT EXISTS db_rush;";
 mysqli_query($fd,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
@@ -69,7 +72,7 @@ $query = "CREATE TABLE `USERS` (
 mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
 
 $query = "INSERT INTO `USERS` (`id_user`, `firstname`, `lastname`, `email`, `password`, `admin`) VALUES
-(0, 'admin', 'admin', 'admin@admin.com', '6a4e012bd9583858a5a6fa15f58bd86a25af266d3a4344f1ec2018b778f29ba83be86eb45e6dc204e11276f4a99eff4e2144fbe15e756c2c88e999649aae7d94', 1);";
+(1, 'admin', 'admin', 'admin@admin.com', '6a4e012bd9583858a5a6fa15f58bd86a25af266d3a4344f1ec2018b778f29ba83be86eb45e6dc204e11276f4a99eff4e2144fbe15e756c2c88e999649aae7d94', 1);";
 mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
 
 $query = "ALTER TABLE `CART`

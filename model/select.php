@@ -38,7 +38,8 @@ function    getItemIdByName($conn, $item_name)
 
 function    userLogin($conn, $email, $password)
 {
-    $query = "SELECT * FROM users WHERE email= '" . $email . "' AND password= '" . $password . "'";
+	$query = "SELECT * FROM users WHERE email= '" . $email . "' AND password= '" . $password . "'";
+	echo $password;
 
     if ($result = mysqli_query($conn, $query))
     {
