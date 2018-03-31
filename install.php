@@ -1,29 +1,22 @@
 <?php
 require('./model/config/config.php');
 
-$filename = 'import.sql';
+$query = '';
+$sqlScript = file('import.sql');
+foreach ($sqlScript as $line){
 
-// Connect to MySQL server
-$server_conn = mysqli_connect($mysql_host, $mysql_username, $mysql_password) or die ('Error connecting to MySQL server: ' . mysqli_connect_error());
-// Select database
-$selected_db = mysqli_select_db($server_conn, $mysql_database) or die('Error selecting MySQL database: ' . mysqli_connect_errno());
+	$startWith = substr(trim($line), 0 ,2);
+	$endWith = substr(trim($line), -1 ,1);
 
+	if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
+		continue;
+	}
 
-$templine = '';
-
-$lines = file_get_contents($filename);
-
-foreach ($lines as $line)
-{
-    if (substr($line, 0, 2) == '--' || $line == '')
-        continue;
-
-    $templine .= $line;
-    if (substr(trim($line), -1, 1) == ';')
-    {
-        mysqli_query($server_conn + $selected_db, $templine) or print('Error - This don\'t work.');
-        $templine = '';
-    }
+	$query = $query . $line;
+	if ($endWith == ';') {
+		mysqli_query($conn,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+		$query= '';
+	}
 }
-echo "Tables imported successfully";
+echo '<div class="success-response sql-import-response">SQL file imported successfully</div>';
 ?>
