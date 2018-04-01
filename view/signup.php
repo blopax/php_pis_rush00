@@ -29,10 +29,10 @@ if(isset($_POST['signup']))
 
     if(!$error)
     {
-        if(userSignup($conn, 0, $firstname, $lastname, $email, hash('whirlpool', $password), 0))
+        if(addNewUser($firstname, $lastname, $email, hash('whirlpool', $password)))
             echo 'Bravo ! Votre compte a été crée avec succès. Pouvez désormais vous connecter.';
         else
-            echo "Erreur - L'inscription est actuellement indisponible (c'est pas vrai). Réessayez plus tard.";
+            echo "Erreur - L'inscription est actuellement indisponible. Réessayez plus tard.";
     } else {
         echo "Erreur - Les informations que vous avez soumis sont invalides. Erreur : ".$msg_error ;
     }

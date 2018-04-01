@@ -87,7 +87,7 @@ function    getItemsByCart($id_cart)
     return $row;
 }
 
-/*
+
 function    userLogin($conn, $email, $password)
 {
 	$query = "SELECT * FROM users WHERE email= '" . $email . "' AND password= '" . $password . "'";
@@ -119,5 +119,5 @@ function    getUserLevel($conn, $id_user)
         return 1;
     mysqli_close($conn);
 }
-*/
+
 ?>
