@@ -1,0 +1,287 @@
+.table_r
+{
+	border:10px black;
+	border-color:#E4E5E5;
+	border-radius:25% 10%;
+	box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+	background: rgb(226,226,226);
+	background: linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: linear-gradient(-45deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	background: linear-gradient(135deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	filter: gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 );
+	position:sticky;right:25%;
+	width:50%;
+	height:150px;
+}
+
+.table_l
+{
+	border:10px black;
+	border-color:#E4E5E5;
+	border-radius:10% 25%;
+	box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+	background: rgb(226,226,226);
+	background: linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: linear-gradient(-45deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	background: linear-gradient(135deg, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%);
+	filter: gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=1 );
+	position:sticky;left:25%;
+	width:50%;
+	height:150px;
+}
+
+.image_size
+{
+	background-color:#F2F2F2;
+	margin-right:auto;
+	margin-left:auto;
+	box-shadow:0px 10px 5px grey;
+	border-radius:50%;
+	width:50%;
+}
+
+.supprimer
+{
+	border-radius: 150px;
+	background-color:#FE3838;
+	height:auto;
+	border: none;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	transition: all 0.5s;
+	cursor: pointer;
+	box-shadow:0px 10px 5px grey;
+}
+
+.supprimer span
+{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.supprimer span:after
+{
+	content: 'X';
+	position:absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.supprimer:hover span
+{
+	padding-right:20px;
+}
+
+.supprimer:hover span:after
+{
+	opacity: 1;
+	right: 0;
+}
+
+.font_style
+{
+	font-size:40%;
+	min-width:50px;
+	text-align:center;
+	font-family:verdana;
+}
+
+.title_style
+{
+	font-size:60%;
+	text-align:center;
+}
+
+article, div, p, h3
+{
+	margin: 0;
+	padding: 0;
+}
+
+.lst_articles
+{
+	width: 90%;
+	min-width: 700px;
+	margin: auto;
+	padding: 0;
+}
+
+.lst_articles article div
+{
+	position:relative;
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+
+.lst_articles article
+{
+	vertical-align:center;
+	display: inline-block;
+	width: 45%;
+	margin-bottom: 30px;
+}
+
+.lst_articles article div div img {
+	margin-left: 30px;
+}
+
+.lst_articles input {
+	width: 80%;
+}
+
+.image_wrapp
+{
+	position:absolute:center;
+	vertical-align:center;
+	text-align: center;
+	width: 30%;
+}
+
+.text_wrapp
+{
+	vertical-align: center;
+	width: 50%;
+}
+
+.controller_wrapp
+{
+	vertical-align: center;
+	width: 10%;
+}
+
+.acheter
+{
+	position:absolute;right:10%;
+	border-radius: 150px;
+	background-color:green;
+	height:auto;
+	border: none;
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	transition: all 0.5s;
+	cursor: pointer;
+	box-shadow:0px 10px 5px grey;
+}
+
+.acheter span
+{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.acheter span:after
+{
+	content: '✔';
+	position:absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.acheter:hover span
+{
+	padding-right:60px;
+}
+
+.acheter:hover span:after
+{
+	opacity: 1;
+	right: 0;
+}
+
+.ajouter
+{
+	border-radius: 150px;
+	background-color:green;
+	height:auto;
+	border: none;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	transition: all 0.5s;
+	cursor: pointer;
+	box-shadow:0px 10px 5px grey;
+}
+
+.ajouter span
+{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.ajouter span:after
+{
+	content: '+';
+	position:absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.ajouter:hover span
+{
+	padding-right:20px;
+}
+
+.ajouter:hover span:after
+{
+	opacity: 1;
+	right: 0;
+}
+
+.aller
+{
+	border-radius: 150px;
+	background-color:orange;
+	height:auto;
+	border: none;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+	transition: all 0.5s;
+	cursor: pointer;
+	box-shadow:0px 10px 5px grey;
+}
+
+.aller span
+{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.aller span:after
+{
+	content: '→';
+	position:absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.aller:hover span
+{
+	padding-right:20px;
+}
+
+.aller:hover span:after
+{
+	opacity: 1;
+	right: 0;
+}
