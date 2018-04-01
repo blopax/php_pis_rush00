@@ -1,0 +1,25 @@
+
+ul{margin:0;
+padding:0 0 0 1px;
+list-style-type: none;
+}
+
+
+a{
+	display: block;
+	width: 350px;
+	height: 35px;
+	background: grey;
+	color: black;
+	font-size: 25px;
+	line-height: 35px;
+	text-decoration: none;
+	padding-left: 25px;
+}
+
+a:hover{
+background: green;
+
+}
+
+li{float:left;}
