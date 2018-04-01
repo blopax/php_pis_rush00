@@ -22,28 +22,9 @@ function    printtest($t)
     echo "<BR>";
 }
 
+
 function test_select()
 {
-        $test = getItemsByCart(12);
-        printtest($test);
-
-
-    	/*getCartIdForUser($conn, $id_user);
-
-
-        getCategoryIdByName($conn, $cat_name);
-
-
-        getItemIdByName($conn, $item_name);
-
-
-        userLogin($conn, $email, $password);
-
-
-        checkIfEmailExist($conn, $email);
-
-
-        getUserLevel($conn, $id_user);*/
 
 }
 

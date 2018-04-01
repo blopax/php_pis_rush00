@@ -1,16 +1,9 @@
 <?php
 
+include('config/config.php');
+include_once('config/connect_db.php');
 
-function    connect_db()
-{
-    $mysql_host = 'localhost';
-    $mysql_username = 'root';
-    $mysql_password = '210987';
-    $mysql_database = 'db_rush';
 
-    $fd = mysqli_connect($mysql_host, $mysql_username,$mysql_password,$mysql_database);
-    return $fd;
-}
 
 function    getCategories()
 {
@@ -94,7 +87,7 @@ function    getItemsByCart($id_cart)
     return $row;
 }
 
-
+/*
 function    userLogin($conn, $email, $password)
 {
 	$query = "SELECT * FROM users WHERE email= '" . $email . "' AND password= '" . $password . "'";
@@ -126,5 +119,5 @@ function    getUserLevel($conn, $id_user)
         return 1;
     mysqli_close($conn);
 }
-
+*/
 ?>
