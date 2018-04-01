@@ -11,9 +11,9 @@ function    createItem($conn, $category)
     mysqli_close($conn);
 }
 
-function    createCategory($conn)
+function    createCategory($conn, $category)
 {
-    $query = "INSERT INTO categories () VALUES ()";
+    $query = "INSERT INTO categories VALUES ($category)";
     if(mysqli_query($conn, $query))
         return 1;
     else

@@ -3,7 +3,13 @@ include('config/config.php');
 
 function    getItemsFromCategory($conn, $category)
 {
-
+    $query = "SELECT * FROM items WHERE id_cat IN (SELECT id_cat FROM categories WHERE cat_name='" . $category . "')";
+    if($result = mysqli_query($conn, $query))
+    {
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        echo "passela";
+        return $row;
+    }
 }
 
 function	getCartIdForUser($conn, $id_user)

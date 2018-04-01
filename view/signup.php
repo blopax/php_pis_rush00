@@ -40,6 +40,7 @@ if(isset($_POST['signup']))
 
 ?>
 
+<html>
 <body>
 <form method="POST">
     <fieldset>
