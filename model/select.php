@@ -1,46 +1,99 @@
 <?php
-include('config/config.php');
 
-function    getItemsFromCategory($conn, $category)
+
+function    connect_db()
 {
-    $query = "SELECT * FROM items WHERE id_cat IN (SELECT id_cat FROM categories WHERE cat_name='" . $category . "')";
-    if($result = mysqli_query($conn, $query))
-    {
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        echo "passela";
-        return $row;
-    }
+    $mysql_host = 'localhost';
+    $mysql_username = 'root';
+    $mysql_password = '210987';
+    $mysql_database = 'db_rush';
+
+    $fd = mysqli_connect($mysql_host, $mysql_username,$mysql_password,$mysql_database);
+    return $fd;
 }
 
-function	getCartIdForUser($conn, $id_user)
+function    getCategories()
 {
-	$query = "SELECT id_cart FROM cart WHERE id_user= '" . $id_user . "'";
-	if($result = mysqli_query($conn, $query))
-	{
-		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-		return $row['id_cart'];
-	}
+
+    $query = "SELECT cat_name FROM categories";
+
+    $fd = connect_db();
+    $result = mysqli_query($fd, $query);
+
+    while ($row[] = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+    mysqli_close($fd);
+    return $row;
 }
 
-function    getCategoryIdByName($conn, $cat_name)
+function    getUsers()
 {
-    $query = "SELECT cat_name FROM categories WHERE cat_name= '" . $cat_name . "'";
-    if($result = mysqli_query($conn, $query))
-    {
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        return $row['id_cat'];
-    }
+    $query = "SELECT * FROM users";
+
+    $fd = connect_db();
+    $result = mysqli_query($fd, $query);
+
+    while ($row[] = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+        mysqli_close($fd);
+    return $row;
 }
 
-function    getItemIdByName($conn, $item_name)
+function getUserProfile($id_user)
 {
-    $query = "SELECT item_name FROM items WHERE item_name= '" . $item_name . "'";
-    if($result = mysqli_query($conn, $query))
-    {
-        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        return $row['id_items'];
-    }
+    $query = "SELECT * FROM users WHERE id_user='" . $id_user . "';";
+
+    $fd = connect_db();
+    $result = mysqli_query($fd, $query);
+
+    while ($row[] = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+        mysqli_close($fd);
+    return $row;
 }
+
+function    getItemsByCategory($category)
+{
+    $query = "SELECT * FROM items WHERE id_cat IN (SELECT id_cat FROM categories WHERE cat_name='" . $category . "');";
+
+    $fd = connect_db();
+    $result = mysqli_query($fd, $query);
+
+    while ($row[] = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+        mysqli_close($fd);
+    return $row;
+
+}
+
+function    getCartByUser($id_user)
+{
+
+
+    $query = "SELECT id_cart FROM cart WHERE id_user='" . $id_user . "';";
+
+    $fd = connect_db();
+    $result = mysqli_query($fd, $query);
+
+    while ($row[] = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+    mysqli_close($fd);
+    return $row;
+}
+
+function    getItemsByCart($id_cart)
+{
+    $query = "SELECT * FROM cart_items WHERE id_cart='" . $id_cart . "';";
+
+    $fd = connect_db();
+    $result = mysqli_query($fd, $query);
+
+    while ($row[] = mysqli_fetch_array($result, MYSQLI_ASSOC))
+
+        mysqli_close($fd);
+    return $row;
+}
+
 
 function    userLogin($conn, $email, $password)
 {

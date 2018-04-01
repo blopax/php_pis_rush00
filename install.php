@@ -130,6 +130,30 @@ $query = "ALTER TABLE `CART_ITEMS`
   ADD CONSTRAINT `FK_CART_ITEMS2` FOREIGN KEY (`id_item`) REFERENCES `ITEMS` (`id_item`) ON UPDATE CASCADE;";
 mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
 
+$query = "INSERT INTO categories (`cat_name`) VALUES ('Categorie1');";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO categories (`cat_name`) VALUES ('Categorie2');";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO categories (`cat_name`) VALUES ('Categorie3');";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item1',52,'lienitempic',1);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item2',52,'lienitempic',1);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item3',52,'lienitempic',1);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item10',52,'lienitempic',2);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item20',52,'lienitempic',2);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item30',52,'lienitempic',2);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item11',52,'lienitempic',3);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item21',52,'lienitempic',3);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
+$query = "INSERT INTO items (`item_name`, `item_price`, `item_pic`, `id_cat`) VALUES ('item31',52,'lienitempic',3);";
+mysqli_query($fd2,$query) or die('<div class="error-response sql-import-response">Problem in executing the SQL query <b>' . $query. '</b></div>');
 
 mysqli_close($fd2);
 

@@ -9,13 +9,23 @@ include('config/config.php');
 $category = $_POST['category'];
 if ($category)
 {
-    test_select($category);
+    test_select();
 }
 
-function test_select($var)
+function    printtest($t)
 {
-    echo "FOUCK";
-        echo getItemsFromCategory($conn, $var);
+    $i = 0;
+    while ($t[$i]) {
+        print_r($t[$i]);
+        $i++;
+    }
+    echo "<BR>";
+}
+
+function test_select()
+{
+        $test = getItemsByCart(12);
+        printtest($test);
 
 
     	/*getCartIdForUser($conn, $id_user);
